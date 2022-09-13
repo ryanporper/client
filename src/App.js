@@ -2,48 +2,30 @@ import './App.css';
 
 import { Link, Navigate, Route, Routes } from 'react-router-dom';
 
-import { AllDestinations } from './views/AllDestinations';
-/* Default import if there is a default export, can choose any name: */
-// import MyView from './views/AllDestinations';
-
-import { OneDestination } from './views/OneDestination';
-import { NewDestination } from './views/NewDestination';
-import { EditDestination } from './views/EditDestination';
-import { NotFound } from './views/NotFound';
+import { AllProducts } from './views/Products';
+import { OneProduct } from './views/OneProduct';
+import { EditProduct } from './views/EditProduct';
 
 function App() {
   return (
     <div className="container">
       <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top justify-content-center mb-4">
-        <h1 className="navbar-brand mb-0">Trip Planner</h1>
+        <h1 className="navbar-brand mb-0">Product Manager</h1>
         <div className="navbar-nav justify-content-between">
           <Link
-            to="/destinations"
+            to="/products"
             className="btn btn-sm btn-outline-primary mx-1"
           >
-            All Destinations
-          </Link>
-          <Link
-            to="/destinations/new"
-            className="btn btn-sm btn-outline-info mx-1"
-          >
-            New Destination
+            All Products
           </Link>
         </div>
       </nav>
-
-      {/*
-      Front-end routes to display view components.
-      these are separate from our server routes.
-      */}
+            
       <Routes>
-        {/* Redirect example */}
-        <Route path="/" element={<Navigate to="/destinations" replace />} />
-        <Route path="/destinations" element={<AllDestinations />} />
-        <Route path="/destinations/:id/edit" element={<EditDestination />} />
-        <Route path="/destinations/:id" element={<OneDestination />} />
-        <Route path="/destinations/new" element={<NewDestination />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="/" element={<Navigate to="/products" replace />} />
+        <Route path="/products" element={<AllProducts />} />
+        <Route path="/products/:id/edit" element={<EditProduct />} />
+        <Route path="/products/:id" element={<OneProduct />} />
       </Routes>
     </div>
   );

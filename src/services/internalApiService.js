@@ -16,27 +16,27 @@ const http = axios.create({
   baseURL: 'http://localhost:8000/api',
 });
 
-export const getAllDestinations = async () => {
-  const res = await http.get('/destinations');
+export const getAllProducts = async () => {
+  const res = await http.get('/products');
   return res.data;
 };
 
-export const getDestinationById = async (id) => {
-  const res = await http.get(`/destinations/${id}`);
+export const getProductById = async (id) => {
+  const res = await http.get(`/products/${id}`);
   return res.data;
 };
 
-export const createDestination = async (data) => {
-  const res = await http.post('/destinations', data);
+export const createProduct = async (data) => {
+  const res = await http.post('/products', data);
   return res.data;
 };
 
-export const updateDestinationById = async (id, data) => {
-  const res = await http.put(`/destinations/${id}`, data);
+export const updateProductById = async (id, data) => {
+  const res = await http.put(`/products/${id}`, data);
   return res.data;
 };
 
-export const deleteDestinationById = async (id) => {
-  const res = await http.delete(`/destinations/${id}`);
+export const deleteProductById = async (id) => {
+  const res = await http.delete(`/products/${id}`);
   return res.data;
 };
